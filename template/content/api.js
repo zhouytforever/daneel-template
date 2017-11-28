@@ -26,4 +26,3 @@ export function del(data) {
 export function getExcelUri(shelfCode) {
   return `/unmanned/shelves/admin/export/excel/${shelfCode}/shelf_goods_relation/v1`;
 }
-
