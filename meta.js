@@ -28,5 +28,5 @@ module.exports = {
       "message": "Continue another one property ?"
     },
 	},
-  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n "
+  "completeMessage": "To get start:\n\n1. Config the CURD api path in {{^inPlace}}/module/api.js\n2. Add the menu and other config for this module."
 };
