@@ -28,5 +28,14 @@ module.exports = {
       "message": "Continue another one property ?"
     },
 	},
+  "metalsmith": {
+    // before: function (metalsmith, opts, helpers) {
+    before: function () {
+      console.log(arguments);
+    },
+    after: function (metalsmith, opts, helpers) {
+      console.log(arguments);
+    }
+  }
   "completeMessage": "Generated"
 };
