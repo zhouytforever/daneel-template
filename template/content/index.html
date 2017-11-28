@@ -4,7 +4,7 @@
      <BreadcrumbItem >销售点管理</BreadcrumbItem>
      <BreadcrumbItem href="/shelves2warehouse" >销售点管理</BreadcrumbItem>
      <BreadcrumbItem href="/commodity2booth" >
-      销售点商品管理 【{{entity.shelfName}}】
+      销售点商品管理 【\{{entity.shelfName}}】
      </BreadcrumbItem>
   </Breadcrumb>
   <!--搜索-->
@@ -33,7 +33,7 @@
         >
           <Option v-for="item in deviceTypes"
             :value="item.deviceTypeId"
-            :key="item.deviceTypeId">{{ item.deviceTypeName }}
+            :key="item.deviceTypeId">\{{ item.deviceTypeName }}
           </Option>
         </Select>
       </FormItem>
@@ -130,7 +130,7 @@
         class="dialogInput" clearable>
         <Option v-for="item in sellingStatusList"
           :value="item.code"
-          :key="item.code">{{ item.name }}
+          :key="item.code">\{{ item.name }}
         </Option>
       </Select>
     </FormItem>
@@ -138,7 +138,7 @@
       <Select v-model="entity.equipmentType" class="dialogInput">
         <Option v-for="item in deviceTypes"
           :value="item.deviceTypeId"
-          :key="item.deviceTypeId">{{ item.deviceTypeName }}
+          :key="item.deviceTypeId">\{{ item.deviceTypeName }}
         </Option>
       </Select>
     </FormItem>
