@@ -1,12 +1,4 @@
 <section>
-  <Breadcrumb>
-     <BreadcrumbItem href="/" >主页</BreadcrumbItem>
-     <BreadcrumbItem >销售点管理</BreadcrumbItem>
-     <BreadcrumbItem href="/shelves2warehouse" >销售点管理</BreadcrumbItem>
-     <BreadcrumbItem href="/commodity2booth" >
-      销售点商品管理 【\{{entity.shelfName}}】
-     </BreadcrumbItem>
-  </Breadcrumb>
   <!--搜索-->
   <section class="searchBox">
     <Form inline>
@@ -14,40 +6,7 @@
         <label>商品名称:</label>
       </FormItem>
       <FormItem>
-        <Input v-model="searchCondition.name" size="large" />
-      </FormItem>
-      <FormItem>
-        <label>SKU_code:</label>
-      </FormItem>
-      <FormItem>
-        <Input v-model="searchCondition.skuCode" size="large" />
-      </FormItem>
-      <FormItem>
-        <label>所在设备类型:</label>
-      </FormItem>
-      <FormItem>
-        <Select
-          v-model="searchCondition.equipmentType"
-          clearable
-          style="width: 100px"
-        >
-          <Option v-for="item in deviceTypes"
-            :value="item.deviceTypeId"
-            :key="item.deviceTypeId">\{{ item.deviceTypeName }}
-          </Option>
-        </Select>
-      </FormItem>
-      <FormItem>
-        <label>上下架状态:</label>
-      </FormItem>
-      <FormItem>
-        <Select
-          v-model="searchCondition.status"
-          clearable
-          style="width: 80px"
-        >
-          <Option v-for="item in sellingStatusList" :value="item.code" :key="item.code">{{ item.name }}</Option>
-        </Select>
+        <Input v-model="searchCondition.name" />
       </FormItem>
       <FormItem>
         <Button type="primary" @click="onPreSearch">查询</Button>

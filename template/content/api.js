@@ -1,28 +1,31 @@
 /*
  * @author: yuting.zhou
- * @description: 销售点商品管理接口
+ * @description: CURD Api
  */
+
+// 引入你自己的Api
 import Request from '@/api';
 
-// 编辑
-export function save(data) {
-  const uri = '/unmanned/shelves/admin/goods/save/v1';
+// 添加
+export function create(data) {
+  const uri = '添加的接口';
+  return Request.post(uri, data);
+}
+
+// 更新
+export function update(data) {
+  const uri = '更新的接口';
   return Request.post(uri, data);
 }
 
 // 查询
-export function search(data) {
-  const uri = '/unmanned/shelves/admin/goods/list/v1';
-  return Request.post(uri, data);
-}
-
-// 删除
-export function del(data) {
-  const uri = '/unmanned/shelves/admin/goods/delete/v1';
+export function retrieve(data) {
+  const uri = '查询的接口';
   return Request.get(uri, data);
 }
 
-// 导出
-export function getExcelUri(shelfCode) {
-  return `/unmanned/shelves/admin/export/excel/${shelfCode}/shelf_goods_relation/v1`;
+// 删除
+export function delete(shelfCode) {
+  const uri = '删除的接口';
+  return Request.get(uri, data);
 }
