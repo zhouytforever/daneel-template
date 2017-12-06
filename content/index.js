@@ -57,8 +57,8 @@ export default {
   },
 
   methods: {
-    onSearch(default) {
-      if (default)
+    onSearch(original) {
+      if (original)
         this.searchCondition = JSON.parse(JSON.stringify(defaultSearch));
       search(this.searchCondition).then((resData) => {
         this.dataSource = resData.data || [];
