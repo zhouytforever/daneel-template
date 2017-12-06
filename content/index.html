@@ -4,10 +4,9 @@
     <Form inline>
       {{#pairs}}
       <FormItem>
-      <label>{{label}}:</label>
+        <label>{{label}}:</label>
       </FormItem>
-      <FormItem>
-      <Input v-model="entity.{{variable}}" />
+        <Input v-model="entity.{{variable}}" />
       </FormItem>
       {{/pairs}}
       <FormItem>
