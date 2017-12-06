@@ -26,7 +26,7 @@ export function retrieve(data) {
 }
 
 // 删除
-export function delete(shelfCode) {
+export function del(data) {
   const uri = '删除的接口';
   return Request.get(uri, data);
 }
