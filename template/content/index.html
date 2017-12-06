@@ -2,109 +2,19 @@
   <!--搜索-->
   <section class="searchBox">
     <Form inline>
+      {{#pairs}}
       <FormItem>
-        <label>商品名称:</label>
+      <label>{{label}}:</label>
       </FormItem>
       <FormItem>
-        <Input v-model="searchCondition.name" />
+      <Input v-model="entity.{{variable}}" />
       </FormItem>
+      {{/pairs}}
       <FormItem>
         <Button type="primary" @click="onPreSearch">查询</Button>
       </FormItem>
     </Form>
   </section>
   <!--/搜索-->
-
-  <!--按钮群组-->
-  <section class="buttonGroup">
-    <Button type="primary" @click="openDialog">新增销售点商品</Button>
-    <a class="ivu-btn ivu-btn-primary" :href="exportHref">批量导出商品</a>
-  </section>
-  <!--/按钮群组-->
-
-  <!--数据表格-->
-  <section>
-    <Table border :columns="columns" :data="dataSource" />
-  <Page
-    show-total
-    class="text-right"
-    placement="top"
-    :current.sync='page.pageNo'
-    :page-size='page.pageSize'
-    :total="page.totalSize"
-    @on-change='handlePageChange'
-  />
-  </section>
-  <!--/数据表格-->
-
-  <!--弹窗-->
-  <Modal
-    width=600
-    v-model="isShowModal"
-    :title="dialogTitle"
-  >
-  <Form
-    ref="dialogForm"
-    class="dialogForm"
-    :rules="rules"
-    :model="entity"
-    label-position="left"
-    :label-width="100"
-    style="padding: 0px 20px;"
-  >
-    <FormItem label="销售点:">
-      <Input v-model="entity.shelfCode" disabled/>
-    </FormItem>
-    <FormItem label="销售点名称:">
-      <Input v-model="entity.shelfName" disabled/>
-    </FormItem>
-    <FormItem prop="skuCode" label="sku_code:">
-      <Input
-        placeholder="请输入sku_code"
-        v-model="entity.skuCode"
-        @on-blur="fetchCommodityName"
-      />
-    </FormItem>
-    <FormItem prop="name" label="商品名称:">
-      <Input v-model="entity.name" disabled/>
-    </FormItem>
-    <FormItem prop="amount" label="最大陈列数:">
-      <InputNumber
-        v-model="entity.amount"
-        :precision="0"
-        :min="1"
-        :max="99"
-      />
-    </FormItem>
-    <FormItem prop="adjustable" label="可调陈列数:" >
-      <InputNumber
-        v-model="entity.adjustable"
-        :precision="0"
-        :min="1"
-        :max="99"
-      />
-    </FormItem>
-    <FormItem prop="status" label="上下架状态:">
-      <Select v-model="entity.status"
-        class="dialogInput" clearable>
-        <Option v-for="item in sellingStatusList"
-          :value="item.code"
-          :key="item.code">\{{ item.name }}
-        </Option>
-      </Select>
-    </FormItem>
-    <FormItem prop="equipmentType" label="所属货架类型:">
-      <Select v-model="entity.equipmentType" class="dialogInput">
-        <Option v-for="item in deviceTypes"
-          :value="item.deviceTypeId"
-          :key="item.deviceTypeId">\{{ item.deviceTypeName }}
-        </Option>
-      </Select>
-    </FormItem>
-    </Form>
-    <div slot="footer">
-      <Button long size="large" type="primary" @click="onSave">保存</Button>
-    </div>
-  </Modal>
-  <!--/弹窗-->
 </section>
+
