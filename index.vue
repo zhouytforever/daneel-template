@@ -1,4 +1,4 @@
-<!-- 销售点商品管理 -->
-<template src="./content/index.html"></template>
-<script src="./content/index.js"></script>
-<style scoped lang="less" src="./content/index.less"></style>
+<!-- entry of the module -->
+<template src="./module/index.html"></template>
+<script src="./module/index.js"></script>
+<style scoped lang="less" src="./module/index.less"></style>
