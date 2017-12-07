@@ -17,7 +17,7 @@ export const defaultSearch = {
   page: {
     pageNo: 1,
     pageSize: 20,
-  }
+  },
 };
 
 export const baseColumns = [
@@ -33,4 +33,4 @@ export const MODE = {
   VIEW: 'VIEW',
   ADD: 'ADD',
   EDIT: 'EDIT',
-}
+};

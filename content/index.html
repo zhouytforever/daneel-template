@@ -1,15 +1,15 @@
 <section>
   <!--搜索-->
-  <section class="searchBox">
-    <Form inline>
+  <section class="search-panel">
+    <Form inline :label-width="100">
       {{#pairs}}
       <FormItem label="{{label}}" prop="{{variable}}">
-        <Input v-model="entity.{{variable}}" />
+        <Input v-model="searchCondition.{{variable}}" />
       </FormItem>
       {{/pairs}}
       <FormItem>
         <Button type="primary" @click="onSearch">查询</Button>
-        <Button @click="onReset">重置</Button>
+        <Button @click="() => { this.onSearch(true) }">重置</Button>
       </FormItem>
     </Form>
   </section>
@@ -17,7 +17,7 @@
 
   <!--按钮群组-->
   <section class="buttonGroup">
-    <Button type="primary" @click="() => { this.mode = MODE.ADD }">添加</Button>
+    <Button type="primary" @click="onAdd">添加</Button>
     <Button type="primary" @click="onDelete">删除</Button>
   </section>
   <!--按钮群组-->
@@ -34,9 +34,9 @@
       show-total
       class="text-right"
       placement="top"
-      :current.sync='page.pageNo'
-      :page-size='page.pageSize'
-      :total="page.totalSize"
+      :current.sync='searchCondition.page.pageNo'
+      :page-size='searchCondition.page.pageSize'
+      :total="searchCondition.page.totalSize"
       @on-change='onPageChange'
     />
   </section>
@@ -46,8 +46,8 @@
   <Modal
     :title="modalTitle"
     width="700"
-    :model="mode === MODE.EDIT || mode === MODE.ADD">
-    <Form :label-width="150" :model="entity" :rules="rules">
+    v-model="showModal">
+    <Form :label-width="150" :model="entity">
       {{#pairs}}
       <FormItem label="{{label}}" prop="{{variable}}">
         <Input class="wrapperWidth" v-model="entity.{{variable}}" />
