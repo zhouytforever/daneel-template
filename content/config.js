@@ -11,6 +11,11 @@ export const defaultEntity = {
 };
 
 export const defaultSearch = {
+  {
+    type: 'selection',
+    width: 60,
+    align: 'center',
+  },
   {{#pairs}}
   {{variable}}: '',
   {{/pairs}}
